@@ -1,0 +1,17 @@
+<div id="container">
+  <div class="example-form" style="display: flex; flex-direction: row; justify-content: space-between;">
+    <mat-form-field class="example-full-width">
+      <mat-label>Longitud de la cadena</mat-label>
+      <input matInput type="number" min="1" [(ngModel)]="tokenForm.length" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cantidad de tokens</mat-label>
+      <input matInput type="number" min="1" [(ngModel)]="tokenForm.quantity" />
+    </mat-form-field>
+  </div>
+  <button mat-button color="warn" (click)="generate()">Generar token</button>
+  <ng-container *ngFor="">
+
+  </ng-container>
+</div>
