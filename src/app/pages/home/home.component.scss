@@ -11,3 +11,11 @@
     margin: auto;
     margin-top: 10%;
 }
+
+.list{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 500px;
+}

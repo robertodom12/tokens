@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
     quantity : 1
   }
 
+  public tokens = []
+
   constructor(
     private tokenService : TokensService
   ) { }
@@ -24,9 +26,7 @@ export class HomeComponent implements OnInit {
   public generate(){
     try {
       //
-      let tokens = this.tokenService.generateTokens(this.tokenForm.length,this.tokenForm.quantity)
-
-      console.log(tokens);
+      this.tokens = this.tokenService.generateTokens(this.tokenForm.length,this.tokenForm.quantity)
       
       
     } catch (error) {

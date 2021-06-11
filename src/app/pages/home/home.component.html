@@ -11,7 +11,9 @@
     </mat-form-field>
   </div>
   <button mat-button color="warn" (click)="generate()">Generar token</button>
-  <ng-container *ngFor="">
-
-  </ng-container>
+  <div class="list">
+    <ng-container *ngFor="let token of tokens; let index = index">
+        <div>{{token}}</div>
+      </ng-container>
+  </div>
 </div>
