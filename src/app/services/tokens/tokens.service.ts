@@ -11,10 +11,15 @@ export class TokensService {
   public generateTokens(length: number, quantity) {    
     try {
       let tokens = []
-
+      let totalCombinations = Math.pow(37,length);
+      console.log(totalCombinations);
+      
       for(let i = 0 ; i < quantity ; i++){
         let token = this.generateToken(length,tokens)
         tokens.push(token)
+        if(tokens.length === totalCombinations){
+          length ++
+        }
       }
       
       return tokens;

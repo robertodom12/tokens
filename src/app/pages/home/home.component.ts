@@ -4,34 +4,28 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public tokenForm = {
+    length: 2,
+    quantity: 1,
+  };
 
-  public tokenForm ={
-    length : 1,
-    quantity : 1
-  }
+  public tokens = [];
 
-  public tokens = []
+  constructor(private tokenService: TokensService) {}
 
-  constructor(
-    private tokenService : TokensService
-  ) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-
-  public generate(){
+  public generate() {
     try {
-      //
-      this.tokens = this.tokenService.generateTokens(this.tokenForm.length,this.tokenForm.quantity)
-      
-      
+      this.tokens = this.tokenService.generateTokens(
+        this.tokenForm.length,
+        this.tokenForm.quantity
+      );
     } catch (error) {
-      
+      console.log(error);
     }
   }
-
 }
